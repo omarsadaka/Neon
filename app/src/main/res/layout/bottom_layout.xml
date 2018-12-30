@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="#FFF"
+    android:elevation="8dp"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/why"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:padding="4dp"
+        android:text="ليه وازاي؟"/>
+
+    <Button
+        android:id="@+id/nwarha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:padding="4dp"
+        android:text="نـــورها"/>
+
+    <Button
+        android:id="@+id/nashra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:padding="4dp"
+        android:text="النــشرة"/>
+
+    <Button
+        android:id="@+id/hags_balady"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:padding="4dp"
+        android:text="هجص بلدى"/>
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/why"-->
+        <!--android:padding="5dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/menu_title"-->
+            <!--android:textSize="17sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="ليه وازاي؟"/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/nwarha"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/cart_title"-->
+            <!--android:textSize="17sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_marginTop="3dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="نورها"/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/nashra"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:orientation="vertical"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<TextView-->
+            <!--android:id="@+id/cake_title"-->
+            <!--android:textSize="17sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_marginTop="3dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="النشرة"/>-->
+
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:id="@+id/hags_balady"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_weight="1"-->
+        <!--android:orientation="vertical"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<TextView-->
+            <!--android:id="@+id/hags_title"-->
+            <!--android:textSize="17sp"-->
+            <!--android:textStyle="bold"-->
+            <!--android:layout_marginTop="3dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="هجص بلدى"/>-->
+
+    <!--</LinearLayout>-->
+
+
+
+</LinearLayout>

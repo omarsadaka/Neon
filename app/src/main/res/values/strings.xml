@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Neon</string>
+    <string name="welcom">Welcom to Neon</string>
+    <string name="email_hint">E-mail</string>
+    <string name="pwd_hint">Password</string>
+    <string name="forgot_pwd">Forgot Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="create_acc">CREATE ACCOUNT</string>
+    <string name="sign_with">Sign In With</string>
+    <string name="track_a_look">Or Take a Look</string>
+    <string name="login_as_guest">Login as a Guest!</string>
+    <string name="home">Home</string>
+    <string name="about_us">About Us</string>
+    <string name="share_app">Share Application</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+    <string name="facebook_app_id">343085376506434</string>
+    <string name="fb_login_protocol_scheme">fb343085376506434</string>
+    <string name="userName">User Name</string>
+    <string name="search">Search</string>
+    <string name="result">No Result Found</string>
+    <string name="register_email">Enter Registered Email !</string>
+    <string name="back_to_signIn">Back To Sign In</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="re_pwd_hint">Re-type Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="Array_tittle">
+        <item>Departments</item>
+
+    </string-array>
+    <string-array name="Home_item">
+        <item>2lna4ra</item>
+        <item>nawrha</item>
+        <item>Why!</item>
+        <item>Hags Balady</item>
+        <item>7ay Yorzak</item>
+        <item>Malaf</item>
+        <item>Hydrogina</item>
+        <item>Menawaa</item>
+        <item>Makalat</item>
+        <item> Mosharakat</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>

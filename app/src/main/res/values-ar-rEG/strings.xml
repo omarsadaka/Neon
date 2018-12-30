@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Neon</string>
+    <string name="welcom">مرحبا بكم في نيون</string>
+    <string name="email_hint">الايميل</string>
+    <string name="pwd_hint">الرقم السرى</string>
+    <string name="forgot_pwd">نسيت الرقم السري</string>
+    <string name="sign_in">تسجيل دخول</string>
+    <string name="create_acc">انشاء حساب</string>
+    <string name="sign_with">تسجيل دخول ب</string>
+    <string name="track_a_look">أو القي نظرة</string>
+    <string name="login_as_guest">تسجيل دخول كضيف</string>
+    <string name="home">الرئيسيه</string>
+    <string name="about_us">ماذا عنا</string>
+    <string name="share_app">مشاركه التطبيق</string>
+    <string name="sign_out">تسجيل خروج</string>
+    <string name="google">جوجل</string>
+    <string name="facebook">فيس بوك</string>
+    <string name="facebook_app_id">343085376506434</string>
+    <string name="fb_login_protocol_scheme">fb343085376506434</string>
+    <string name="userName">اسم المستخدم</string>
+    <string name="search">بحث</string>
+    <string name="result">لا يوجد بحث</string>
+    <string name="register_email">ادخل الايميل !</string>
+    <string name="back_to_signIn">عودة لتسجيل الدخول</string>
+    <string name="reset_password">اعادة الرقم السرى</string>
+    <string name="re_pwd_hint">تاكيد الرقم السري</string>
+    <string name="first_name">الاسم الاول</string>
+    <string name="last_name">الاسم الاخير</string>
+
+    <string-array name="Array_tittle">
+        <item>ألاقسام</item>
+
+    </string-array>
+    <string-array name="Home_item">
+        <item>النشرة</item>
+        <item>نورها</item>
+        <item>ليه وازاى!</item>
+        <item>هجص بلدى</item>
+        <item>حى يرزق</item>
+        <item>الملف</item>
+        <item>هيدروجينا</item>
+        <item>منوع</item>
+        <item>مقالات مترجمه</item>
+        <item>مشاركات حره</item>
+    </string-array>
+
+</resources>

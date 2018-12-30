@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#303f9f"
+        android:padding="7dp">
+        <ImageView
+            android:id="@+id/openDrawer"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/drawer_icon"/>
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+           android:layout_alignParentEnd="true"
+            android:src="@drawable/search"/>
+
+      <ImageView
+          android:id="@+id/neon"
+          android:layout_width="wrap_content"
+          android:layout_height="50dp"
+          android:src="@drawable/logo"
+          android:scaleType="fitXY"
+          android:layout_centerVertical="true"
+          android:layout_centerHorizontal="true"/>
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9c9a9a"
+            android:hint="@string/search"
+            android:textColorHint="#fff"
+            android:textColor="#fff"
+            android:visibility="gone"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/back"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/newback"
+            android:visibility="gone" />
+        <Button
+            android:id="@+id/search2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            android:text="@string/search"
+            android:layout_below="@+id/search_view"
+            android:layout_centerHorizontal="true"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:padding="3dp"
+            android:background="@drawable/button_bg"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
