@@ -89,7 +89,6 @@
         android:backgroundTint="#9c9a9a"
         android:ems="10"
         android:hint="@string/pwd_hint"
-        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
