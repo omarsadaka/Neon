@@ -24,6 +24,7 @@ import com.example.omar.neon.Fragments.MenawaaFragment;
 import com.example.omar.neon.Fragments.MosharkaFragment;
 import com.example.omar.neon.Fragments.WhyFragment;
 import com.example.omar.neon.R;
+import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +35,7 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
     public EditText searchView;
     private Button goSearch;
     private DrawerLayout drawerLayout;
+    private LinearLayout signOut , home , aboutUs;
     private Button menawaa , makalat , mosharka;
     ExpandableListView expandableListView;
     String heading_item [];
@@ -74,6 +76,9 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
         expandableListView = findViewById(R.id.exp_list);
         goSearch = findViewById(R.id.search2);
         closeDrawer = findViewById(R.id.closeDrawer);
+        signOut = findViewById(R.id.sign_out);
+        home = findViewById(R.id.home_drawer);
+        aboutUs = findViewById(R.id.aboutUs_drawer);
     }
     public void createClicks(){
         openDrawer.setOnClickListener(this);
@@ -84,6 +89,9 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
         back.setOnClickListener(this);
         goSearch.setOnClickListener(this);
         closeDrawer.setOnClickListener(this);
+        signOut.setOnClickListener(this);
+        home.setOnClickListener(this);
+        aboutUs.setOnClickListener(this);
     }
 
     @Override
@@ -128,6 +136,20 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.closeDrawer:
                 drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.sign_out:
+                LoginManager.getInstance().logOut();
+                Toast.makeText(this, "LogOut", Toast.LENGTH_LONG).show();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                ThirdHomeActivity.this.finish();
+                break;
+
+            case R.id.home_drawer:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.aboutUs_drawer:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(ThirdHomeActivity.this , AboutActivity.class));
                 break;
         }
     }

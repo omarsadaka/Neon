@@ -29,6 +29,7 @@ import com.example.omar.neon.Fragments.NashraFragment;
 import com.example.omar.neon.Fragments.NwarhaFragment;
 import com.example.omar.neon.Fragments.WhyFragment;
 import com.example.omar.neon.R;
+import com.facebook.login.LoginManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,6 +40,7 @@ public class SecondHomeActivity extends AppCompatActivity implements View.OnClic
     private ImageView openDrawer , search ,back , neon , closeDrawer;
     private Button goSearch;
     public EditText searchView;
+    private LinearLayout signOut , home , aboutUs;
     private DrawerLayout drawerLayout;
     private Button hayYorzak , malaf , hydrogyna;
     ExpandableListView expandableListView;
@@ -81,6 +83,9 @@ public class SecondHomeActivity extends AppCompatActivity implements View.OnClic
         expandableListView = findViewById(R.id.exp_list);
         goSearch = findViewById(R.id.search2);
         closeDrawer = findViewById(R.id.closeDrawer);
+        signOut = findViewById(R.id.sign_out);
+        home = findViewById(R.id.home_drawer);
+        aboutUs = findViewById(R.id.aboutUs_drawer);
     }
     public void createClicks(){
         openDrawer.setOnClickListener(this);
@@ -91,6 +96,9 @@ public class SecondHomeActivity extends AppCompatActivity implements View.OnClic
         back.setOnClickListener(this);
         goSearch.setOnClickListener(this);
         closeDrawer.setOnClickListener(this);
+        signOut.setOnClickListener(this);
+        home.setOnClickListener(this);
+        aboutUs.setOnClickListener(this);
     }
 
     @Override
@@ -133,8 +141,21 @@ public class SecondHomeActivity extends AppCompatActivity implements View.OnClic
                 intent.putExtra("searchKay" ,searchView.getText().toString() );
                 startActivity(intent);
                 break;
+            case R.id.sign_out:
+                LoginManager.getInstance().logOut();
+                Toast.makeText(this, "LogOut", Toast.LENGTH_LONG).show();
+                drawerLayout.closeDrawer(GravityCompat.START);
+                SecondHomeActivity.this.finish();
+                break;
             case R.id.closeDrawer:
                 drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.home_drawer:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.aboutUs_drawer:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(SecondHomeActivity.this , AboutActivity.class));
                 break;
         }
 

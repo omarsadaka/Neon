@@ -64,7 +64,7 @@
 
                 <LinearLayout
                     android:padding="10dp"
-                    android:id="@+id/menuDrawer"
+                    android:id="@+id/home_drawer"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -84,7 +84,7 @@
                 </LinearLayout>
                 <LinearLayout
                     android:padding="10dp"
-                    android:id="@+id/cartDrawer"
+                    android:id="@+id/aboutUs_drawer"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">

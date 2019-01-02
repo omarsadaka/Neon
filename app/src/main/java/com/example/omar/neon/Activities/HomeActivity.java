@@ -57,7 +57,7 @@ import io.supercharge.shimmerlayout.ShimmerLayout;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView openDrawer, search , back, neon , closeDrawer;
-    private LinearLayout signOut;
+    private LinearLayout signOut , home , aboutUs;
     private ImageView userImage;
     private TextView userName;
     private TextView postTitle;
@@ -147,6 +147,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         signOut = findViewById(R.id.sign_out);
         shimmerLayout = findViewById(R.id.shimmer_horizontal);
         closeDrawer = findViewById(R.id.closeDrawer);
+        home = findViewById(R.id.home_drawer);
+        aboutUs = findViewById(R.id.aboutUs_drawer);
 
 
     }
@@ -162,6 +164,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         goSearch.setOnClickListener(this);
         signOut.setOnClickListener(this);
         closeDrawer.setOnClickListener(this);
+        home.setOnClickListener(this);
+        aboutUs.setOnClickListener(this);
     }
 
     public void getPosts() {
@@ -269,6 +273,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.closeDrawer:
                 drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.home_drawer:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.aboutUs_drawer:
+                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(HomeActivity.this , AboutActivity.class));
                 break;
 
         }

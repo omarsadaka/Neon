@@ -46,6 +46,7 @@
         <activity android:name=".Activities.SecondHomeActivity" />
         <activity android:name=".Activities.ThirdHomeActivity" />
         <activity android:name=".Activities.SearchActivity" />
+        <activity android:name=".Activities.AboutActivity" />
         <activity android:name=".Activities.CreateAccountActivity"></activity>
     </application>
 
