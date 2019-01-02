@@ -269,6 +269,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 LoginManager.getInstance().logOut();
                 Toast.makeText(this, "LogOut", Toast.LENGTH_LONG).show();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(HomeActivity.this , MainActivity.class));
                 HomeActivity.this.finish();
                 break;
             case R.id.closeDrawer:
@@ -369,36 +370,42 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                     Intent intent = new Intent(HomeActivity.this, SecondHomeActivity.class);
                     intent.putExtra("id", cp);
                     startActivity(intent);
+                    HomeActivity.this.finish();
                     //Toast.makeText(HomeActivity.this, "four", Toast.LENGTH_SHORT).show();
                 } else if (cp == 5) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(HomeActivity.this, SecondHomeActivity.class);
                     intent.putExtra("id", cp);
                     startActivity(intent);
+                    HomeActivity.this.finish();
                     // Toast.makeText(HomeActivity.this, "five", Toast.LENGTH_SHORT).show();
                 } else if (cp == 6) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(HomeActivity.this, SecondHomeActivity.class);
                     intent.putExtra("id", cp);
                     startActivity(intent);
+                    HomeActivity.this.finish();
                     //Toast.makeText(HomeActivity.this, "six", Toast.LENGTH_SHORT).show();
                 } else if (cp == 7) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(HomeActivity.this, ThirdHomeActivity.class);
                     intent.putExtra("id", cp);
                     startActivity(intent);
+                    HomeActivity.this.finish();
                     //Toast.makeText(HomeActivity.this, "seven", Toast.LENGTH_SHORT).show();
                 } else if (cp == 8) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(HomeActivity.this, ThirdHomeActivity.class);
                     intent.putExtra("id", cp);
                     startActivity(intent);
+                    HomeActivity.this.finish();
                     //Toast.makeText(HomeActivity.this, "eight", Toast.LENGTH_SHORT).show();
                 } else if (cp == 9) {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(HomeActivity.this, ThirdHomeActivity.class);
                     intent.putExtra("id", cp);
                     startActivity(intent);
+                    HomeActivity.this.finish();
                     //Toast.makeText(HomeActivity.this, "nine", Toast.LENGTH_SHORT).show();
                 }
 

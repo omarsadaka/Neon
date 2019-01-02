@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        signIn.setOnClickListener(this);
 
         callbackManager = CallbackManager.Factory.create();
-        LoginWithFAcebook();
+        LoginWithFacebook();
         loginButton.setReadPermissions(Arrays.asList(EMAIL));
         mAuth = FirebaseAuth.getInstance ( );
         mAuthListner = new FirebaseAuth.AuthStateListener ( ) {
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
-    private void LoginWithFAcebook() {
+    private void LoginWithFacebook() {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -131,6 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.d ( "Sucses!" , loginResult.toString () );
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
+                MainActivity.this.finish();
 
             }
 
@@ -183,4 +184,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } );
 
     }
+
 }

@@ -8,15 +8,18 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.omar.neon.Adapter.MyExpandapleListAdapter;
+import com.example.omar.neon.Data.ImageConverter;
 import com.example.omar.neon.Fragments.HydrogenyaFragment;
 import com.example.omar.neon.Fragments.MakalatFragment;
 import com.example.omar.neon.Fragments.MalafFragment;
@@ -24,7 +27,14 @@ import com.example.omar.neon.Fragments.MenawaaFragment;
 import com.example.omar.neon.Fragments.MosharkaFragment;
 import com.example.omar.neon.Fragments.WhyFragment;
 import com.example.omar.neon.R;
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
+import com.squareup.picasso.Picasso;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +45,8 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
     public EditText searchView;
     private Button goSearch;
     private DrawerLayout drawerLayout;
+    private ImageView userImage;
+    private TextView userName;
     private LinearLayout signOut , home , aboutUs;
     private Button menawaa , makalat , mosharka;
     ExpandableListView expandableListView;
@@ -47,6 +59,7 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
 
         createView();
         createClicks();
+        getFbData();
         int id =  getIntent().getExtras().getInt("id");
         if (id == 7){
             showClickedItem(menawaa);
@@ -79,6 +92,8 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
         signOut = findViewById(R.id.sign_out);
         home = findViewById(R.id.home_drawer);
         aboutUs = findViewById(R.id.aboutUs_drawer);
+        userImage = findViewById(R.id.imageDrawer);
+        userName = findViewById(R.id.userName);
     }
     public void createClicks(){
         openDrawer.setOnClickListener(this);
@@ -141,11 +156,13 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
                 LoginManager.getInstance().logOut();
                 Toast.makeText(this, "LogOut", Toast.LENGTH_LONG).show();
                 drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(ThirdHomeActivity.this , MainActivity.class));
                 ThirdHomeActivity.this.finish();
                 break;
 
             case R.id.home_drawer:
-                drawerLayout.closeDrawer(GravityCompat.START);
+                startActivity(new Intent(ThirdHomeActivity.this , HomeActivity.class));
+                ThirdHomeActivity.this.finish();
                 break;
             case R.id.aboutUs_drawer:
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -287,5 +304,46 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
     public void onBackPressed() {
         super.onBackPressed();
         ThirdHomeActivity.this.finish();
+    }
+
+    public void getFbData() {
+        if (AccessToken.getCurrentAccessToken ( ) != null) {
+            GraphRequest request = GraphRequest.newMeRequest (
+                    AccessToken.getCurrentAccessToken ( ), new GraphRequest.GraphJSONObjectCallback ( ) {
+                        @Override
+                        public void onCompleted(JSONObject object, GraphResponse response) {
+                            try {
+                                String first_name = object.getString ( "first_name" );
+                                String last_name = object.getString ( "last_name" );
+                                String id = object.getString ( "id" );
+                                String image_url = "https://graph.facebook.com/" + id + "/picture?type=normal";
+
+                                Picasso.get ( ).load ( image_url ).transform ( new ImageConverter( ) ).into ( userImage );
+                                userName.setText ( first_name + last_name );
+                                Log.d ( "user ", first_name + last_name );
+                                Log.d ( "image  ", image_url );
+
+
+                                //todo check if there is an email
+                                if (object.has ( "email" )) {
+                                    String email = object.getString ( "email" );
+                                    Log.d ( "object.toString()", email );
+                                    //use UserData class with that email
+                                } else {
+                                    // create a dialog to get valid mail!!
+                                }
+
+                            } catch (JSONException e) {
+                                e.printStackTrace ( );
+                            }
+
+                        }
+                    } );
+
+            Bundle parameters = new Bundle ( );
+            parameters.putString ( "fields", "first_name,last_name,email,id" );
+            request.setParameters ( parameters );
+            request.executeAsync ( );
+        }
     }
 }
