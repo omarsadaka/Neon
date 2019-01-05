@@ -344,6 +344,8 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
             parameters.putString ( "fields", "first_name,last_name,email,id" );
             request.setParameters ( parameters );
             request.executeAsync ( );
+        }else {
+            userName.setVisibility(View.GONE);
         }
     }
 }
