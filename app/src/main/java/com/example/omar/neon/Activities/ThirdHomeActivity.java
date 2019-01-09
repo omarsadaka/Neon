@@ -1,6 +1,7 @@
 package com.example.omar.neon.Activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -347,5 +348,9 @@ public class ThirdHomeActivity extends AppCompatActivity implements View.OnClick
         }else {
             userName.setVisibility(View.GONE);
         }
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

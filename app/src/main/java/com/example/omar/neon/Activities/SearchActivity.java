@@ -1,5 +1,6 @@
 package com.example.omar.neon.Activities;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -122,5 +123,10 @@ public class SearchActivity extends AppCompatActivity {
             }
         });
         RequestQueueSingleton.getInstance(SearchActivity.this).addToRequestQueue(objectRequest);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

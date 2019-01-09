@@ -2,8 +2,10 @@ package com.example.omar.neon.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -52,6 +54,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import io.supercharge.shimmerlayout.ShimmerLayout;
 
@@ -66,16 +69,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private RecyclerView recyclerView;
     private RecyclerviewAdapter adapter;
     private List<Posts> articleList;
+    private List<String> strings;
     private Button why, nwarha, nashra, hagesBaldy;
     private Button goSearch;
     private ShimmerLayout shimmerLayout;
     private static final String URL = "https://neonsci.com/api/get_recent_posts/";
     private static final String postURL = "https://neonsci.com/api/user/fb_connect/?access_token=";
-    ActivityHomeBinding mainBinding;
     ExpandableListView expandableListView;
     String heading_item[];
     String l1[];
     private int id;
+    String title;
 
 
 
@@ -118,6 +122,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         gridlm.setOrientation(GridLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(gridlm);
         articleList = new ArrayList<>();
+        strings = new ArrayList<>();
         getPosts();
         adapter = new RecyclerviewAdapter(this, articleList);
         recyclerView.setAdapter(adapter);
@@ -188,7 +193,21 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         shimmerLayout.stopShimmerAnimation();
                         shimmerLayout.setVisibility(View.GONE);
                         postTitle.setVisibility(View.VISIBLE);
-                        postTitle.setText(posts.getTitle());
+                        strings.add(jsonObject.getString("title"));
+                    }
+
+                    title = strings.get(new Random().nextInt(strings.size()));
+                    postTitle.setText(title);
+                    Log.e("list" , String.valueOf(strings.size()));
+                    Log.e("list" , String.valueOf(strings));
+                    for ( int j =0 ;j<=strings.size()-1 ;j++) {
+                        final int finalJ = j;
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                postTitle.setText(strings.get(finalJ));
+                            }
+                        }, 2000);
 
                     }
                 } catch (JSONException e) {
@@ -504,6 +523,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         });
         RequestQueueSingleton.getInstance(HomeActivity.this).addToRequestQueue(jsonObjectRequest);
     }
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+    }
 
 }

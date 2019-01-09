@@ -1,6 +1,7 @@
 package com.example.omar.neon.Activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -352,5 +353,9 @@ public class SecondHomeActivity extends AppCompatActivity implements View.OnClic
         }else {
             userName.setVisibility(View.GONE);
         }
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }

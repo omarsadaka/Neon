@@ -1,5 +1,6 @@
 package com.example.omar.neon.Activities;
 
+import android.content.res.Configuration;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -42,5 +43,9 @@ public class PostDetailsActivity extends AppCompatActivity {
         title = findViewById(R.id.post_detail_title);
         content = findViewById(R.id.post_detail_content);
 
+    }
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 }
